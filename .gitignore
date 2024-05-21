@@ -1,0 +1,5 @@
+# Ignore compiled Python files
+*.pyc
+
+# Ignore the secrets.py file
+secrets.py
