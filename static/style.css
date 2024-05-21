@@ -1,0 +1,202 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background color */
+    color: #343a40; /* Dark text color */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+header {
+    background-color: #007bff; /* Darker blue header background color */
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+h1 {
+    color: #fff; /* White header text color */
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+main {
+    padding: 20px 0;
+}
+
+h2 {
+    color: #007bff; /* Darker blue heading color */
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: #fff; /* White grid item background color */
+    border: 1px solid #dee2e6; /* Light border color */
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item strong {
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container input[type="number"] {
+    width: 50px;
+    padding: 3px;
+}
+
+.checkbox-container label {
+    margin-left: 10px;
+}
+
+.start-button {
+    padding: 10px 20px;
+    background-color: #28a745; /* Green wipe button background color */
+    color: #fff; /* White button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.stop-button {
+    padding: 10px 20px;
+    background-color: #dc3545; /* Red stop button background color */
+    color: #fff; /* White button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.stop-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.error-message {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    color: #721c24; /* Dark error message text color */
+    border: 1px solid #f5c6cb; /* Light error message border color */
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.message {
+    color: #007bff; /* Darker blue message text color */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.checkbox-container {
+    margin-top: 20px;
+}
+
+.checkbox-container label {
+    font-size: 14px;
+    color: #343a40; /* Dark text color */
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 5px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    .logo img {
+        max-width: 120px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .grid-item {
+        padding: 15px;
+    }
+
+    .button-container {
+        margin-top: 5px;
+    }
+
+    .start-button, .stop-button {
+        padding: 8px 16px;
+        margin-left: 5px;
+        font-size: 12px;
+    }
+
+    .error-message {
+        height: 40px;
+        margin-top: 5px;
+        padding: 3px;
+        font-size: 12px;
+    }
+
+    .message {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}

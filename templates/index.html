@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hard Drive Wiper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"></a>
+            </div>
+            <h1>Hard Drive Wiper</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Connected Hard Drives</h2>
+            {% if no_drives_message %}
+                <p class="message">{{ no_drives_message }}</p>
+            {% else %}
+                <div class="grid-container">
+                    {% for drive in drives %}
+                        <div class="grid-item">
+                            <strong>Model:</strong> {{ drive.model }} <br>
+                            <strong>Serial:</strong> {{ drive.serial }} <br>
+                            <strong>Size:</strong> {{ drive.size }} <br>
+                            <strong>Device Path:</strong> {{ drive.device_path }} <br>
+                            <strong>USB Port:</strong> {{ drive.usb_port }} <br>
+                            <div class="button-container">
+                                <div class="checkbox-container">
+                                    <input type="number" id="passes-{{ drive.device_path }}" name="passes-{{ drive.device_path }}" min="1" max="35" value="3" required>
+                                    <label for="zero_pass-{{ drive.device_path }}">
+                                        <input type="checkbox" id="zero_pass-{{ drive.device_path }}" name="zero_pass-{{ drive.device_path }}"> Last Pass with Zeros
+                                    </label>
+                                </div>
+                                <button type="button" class="start-button" data-device="{{ drive.device_path }}">Start</button>
+                                <button type="button" class="stop-button" data-device="{{ drive.device_path }}">Stop</button>
+                            </div>
+                            <div>
+                                <textarea id="error-{{ drive.device_path }}" class="error-message" readonly></textarea>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div id="progress-container"></div>
+            <div id="error-container"></div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
